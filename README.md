@@ -13,3 +13,106 @@
 4. Open terminal and reload your .bash_profile: `source ~/.bash_profile`
 5. Run: `jfx`
 6. Ensure that current java version corresponds to your javaFx version
+
+## Introduction
+
+### Properties and backing field
+
+
+Implement IntroductionService#greeting property so that it returns "Hello 1"
+
+Ecpected:
+- Greeting: Hello 1
+
+Now rewrite IntroductionService#greeting such that each invocations returns "Hello + incremented_number"
+
+Expected (first invocation):
+- Greeting: Hello 1
+
+Expected (second invocation):
+- Greeting: Hello 2
+
+Expected (third invocation):
+- Greeting: Hello 3
+
+### Collections
+
+#### Task 1.1
+Implement IntroductionService#listNames and listNumbers. Use convenient builders to return collections.
+
+Expected:
+- **Names:** name1, name2, name3
+- **Numbers:** 1, 2, 3
+
+#### Task 1.2
+Introduce local variable **possibleIds** of type **List<String>**. Rewrite IntroductionService#**listNunbers** to provide
+numeric representation of **possibleIds**
+
+Given:
+- **possibleIds:** ["1", "2", "20", "15"]
+
+Expected
+- **Numbers:** 1, 2, 20, 15
+
+#### Task 1.3
+Filter **possibleIds** to return only numeric values > 10 in ascending order
+
+Given:
+- **possibleIds:** ["1", "2", "20", "15"]
+
+Expected
+- **Numbers:** 15, 20
+
+#### Task 1.4
+Introduce extension function that transforms String into Int catching **NumberFormatException** with fallback == 0
+
+Use this function inside IntroductionService#**listNunbers**
+
+Given:
+- **possibleIds:** ["1", "2", ""a", "20", "b", "15"]
+
+Expected
+- **Numbers:** 15, 20
+
+### Nullable Types
+
+#### Task 2.1
+Introduce variable **id** of type **nullabale Int** and assign it by default to **NULL**.
+
+Inside IntroductionService#**listNunbers** transformation assign **id** to current Int following next rules:
+- if **id** is not **NULL** do nothing
+- if **id** is **NULL** assign current Int to it
+
+Given:
+- **id** = NULL
+- **possibleIds:** ["1", "2", ""a", "20", "b", "15"]
+
+Expected
+- **Numbers:** 15, 20
+- **Complex String:** id = 20
+
+Given:
+- **id** = NULL
+- **possibleIds:** ["1", "2", ""a"]
+
+Expected
+- **Numbers:**
+- **Complex String:** id = -1
+
+#### Task 2.2
+
+Expose **id** via IntroductionService#**createComplexString** prefixing it with "id = " such as:
+
+Given:
+- **id** = NULL
+- **possibleIds:** ["1", "2", ""a", "20", "b", "15"]
+
+Expected
+- **Complex String:** id = 20
+
+Given:
+- **id** = NULL
+- **possibleIds:** ["1", "2", ""a"]
+
+Expected
+- **Complex String:** id = -1
