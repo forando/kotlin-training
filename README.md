@@ -46,7 +46,7 @@ Expected:
 - **Numbers:** 1, 2, 3
 
 #### Task 2.2
-Introduce local variable **possibleIds** of type **List<String>**. Rewrite IntroductionService#**listNunbers** to provide
+Introduce local variable **possibleIds** of type **List of Strings**. Rewrite IntroductionService#**listNunbers** to provide
 numeric representation of **possibleIds**
 
 Given:
@@ -84,12 +84,15 @@ Inside IntroductionService#**listNunbers** transformation assign **id** to curre
 - if **id** is not **NULL** do nothing
 - if **id** is **NULL** assign current Int to it
 
+Expose id with IntroductionService#**createComplexString**
+
 Given:
 - **id** = NULL
 - **possibleIds:** ["1", "2", ""a", "20", "b", "15"]
 
 Expected
 - **Numbers:** 15, 20
+- **Complex String:** 20
 
 Given:
 - **id** = NULL
@@ -97,6 +100,7 @@ Given:
 
 Expected
 - **Numbers:**
+- **Complex String:**
 
 #### Task 3.2
 
