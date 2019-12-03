@@ -8,11 +8,16 @@
 
 1. Download Zulu JavaFX 8 [here](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk-fx)
 2. Unzip archive and put content under `/Library/Java/JavaVirtualMachines/zulu-8-javafx.jdk`
-3. insert next line into your **.bash_profile**: 
+3. Open this project in IntelliJ Idea and point to this **JDK** in your **Project Settings**. 
+    Please, make sure that your **Gradle Settings** also configured to use the same **JDK**.
+    
+Next steps are Optional and only needed if you want to run the app from a console
+
+4. insert next line into your **.bash_profile**: 
     `alias jfx="export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8-javafx.jdk; java -version"`
-4. Open terminal and reload your .bash_profile: `source ~/.bash_profile`
-5. Run: `jfx`
-6. Ensure that current java version corresponds to your javaFx version
+5. Open terminal and reload your .bash_profile: `source ~/.bash_profile`
+6. Run: `jfx`
+7. Ensure that current java version corresponds to your javaFx version
 
 ## Introduction
 
@@ -21,7 +26,13 @@
 #### Task 1.1
 Implement IntroductionService#**greeting** property so that it returns **"Hello 1"**
 
-Ecpected:
+Expected (first invocation):
+- **Greeting:** Hello 1
+
+Expected (second invocation):
+- **Greeting:** Hello 1
+
+Expected (third invocation):
 - **Greeting:** Hello 1
 
 #### Task 1.2
@@ -46,7 +57,7 @@ Expected:
 - **Numbers:** 1, 2, 3
 
 #### Task 2.2
-Introduce local variable **possibleIds** of type **List of Strings**. Rewrite IntroductionService#**listNunbers** to provide
+Introduce local variable **possibleIds** of type **List of Strings**. Rewrite IntroductionService#**listNumbers** to provide
 numeric representation of **possibleIds**
 
 Given:
@@ -67,7 +78,7 @@ Expected
 #### Task 2.4
 Introduce extension function that transforms String into Int catching **NumberFormatException** with fallback == 0
 
-Use this function inside IntroductionService#**listNunbers**
+Use this function inside IntroductionService#**listNumbers**
 
 Given:
 - **possibleIds:** ["1", "2", ""a", "20", "b", "15"]
@@ -78,9 +89,9 @@ Expected
 ### Nullable Types
 
 #### Task 3.1
-Introduce variable **id** of type **nullabale Int** and assign it by default to **NULL**.
+Introduce variable **id** of type **nullable Int** and assign it by default to **NULL**.
 
-Inside IntroductionService#**listNunbers** transformation assign **id** to current Int following next rules:
+Inside IntroductionService#**listNumbers** transformation assign **id** to current Int (before sorting) following next rules:
 - if **id** is not **NULL** do nothing
 - if **id** is **NULL** assign current Int to it
 
